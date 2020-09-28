@@ -24,9 +24,9 @@ function extend(subClass, supClass){
 		superClass.prototype.constructor = superClass;
 	}
 }
-```
-在子类中需要调用 
-```
+
+
+// 在子类中需要调用 
 function Author(name, books) {
 	Author.superclass.constructor.call(this, name); // superclass可以用来弱化Author与Person之间的耦合，有了这个属性，就可以直接调用超类中的方法
 	this.books = books;
@@ -50,3 +50,7 @@ function clone(object){
 	return new F;
 }
 ```
+
+####类式继承与原型式继承的区别与相似之处
+1. 类式继承中：使用构造函数初始化对象的属性，通过调用符类的构造函数来继承这些属性。通过new 父类的 porotype 来继承方法
+2. 原型式继承中： 去掉了构造函数，但需要将对象的属性和方法写一个{}里申明。准确的说，原型式继承就是类式继承中继承符类的prototype方法
