@@ -23,3 +23,16 @@
 指向的都是那个框架的特定实例，而非最高层的框架。
 2. 与top相对的另一个window对象是parent。顾名思义，parent对象始终指向当前框架的直接上层框架。在某些情况下，parent有可能等于top；但在没有框架的情况下，parent一定
 等于top（此时它们都等于window）
+
+
+## location对象
+1. 立即打开新URL并在浏览器的历史记录中生成一条记录（注意：每次修改 location 的属性 - hash除外，页面都以新URL重新加载
+```
+	location.assign('http://www.wrox.com');
+	window.location = 'http://www.wrox.com';
+	location.href = 'http://www.wrox.com';
+```
+2. 用 replace ，会导致浏览器位置改变，但不会在历史记录中生成新记录。（用户不能回到前一个页面）
+```
+	location.replace('http://www.wrox.com');
+```
